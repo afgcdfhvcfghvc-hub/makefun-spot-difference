@@ -1,0 +1,205 @@
+/* Twins of Mosslight — page styling: warm paper, ink navy, coral accents. */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #f6ecd9;
+  color: #22304a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hud {
+  width: 1180px;
+  max-width: 96vw;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 10px 4px 6px;
+}
+
+#brand h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  color: #22304a;
+}
+
+#brand p {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: #7a6a4f;
+}
+
+#stats {
+  display: flex;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.stat {
+  background: #fffaf0;
+  border: 2px solid #22304a;
+  border-radius: 10px;
+  padding: 4px 12px 6px;
+  text-align: center;
+  min-width: 74px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7a6a4f;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+#stat-find {
+  background: #22304a;
+  color: #ffe9a8;
+}
+
+#stat-find .stat-label { color: #cdbd8f; }
+#stat-find .stat-value { font-size: 30px; }
+
+#clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#time-bar-track {
+  width: 130px;
+  height: 14px;
+  border: 2px solid #22304a;
+  border-radius: 8px;
+  background: #fffaf0;
+  overflow: hidden;
+}
+
+#time-bar {
+  height: 100%;
+  width: 100%;
+  background: #58a05c;
+  transition: width 0.25s linear;
+}
+
+#time-bar.low { background: #e4572e; }
+
+#time-left {
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 52px;
+}
+
+#time-left.low { color: #e4572e; }
+
+#controls { display: flex; gap: 8px; }
+
+button {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 7px 14px;
+  border-radius: 9px;
+  border: 2px solid #22304a;
+  background: #ffb454;
+  color: #22304a;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover { background: #ff9d2e; }
+button:disabled { opacity: 0.45; cursor: default; }
+
+#stage {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  padding: 4px 0 0;
+}
+
+.panel-wrap {
+  margin: 0;
+  text-align: center;
+}
+
+.panel-wrap canvas {
+  width: 520px;
+  height: 520px;
+  border: 3px solid #22304a;
+  border-radius: 12px;
+  background: #bfe3ea;
+  box-shadow: 0 6px 18px rgba(34, 48, 74, 0.25);
+  cursor: crosshair;
+  display: block;
+}
+
+.panel-wrap figcaption {
+  margin-top: 6px;
+  font-size: 15px;
+  font-style: italic;
+  color: #7a6a4f;
+}
+
+.panel-wrap.shake canvas {
+  animation: shake 0.28s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+#message {
+  margin: 10px 0 14px;
+  font-size: 18px;
+  min-height: 24px;
+  text-align: center;
+  color: #22304a;
+}
+
+#message.good { color: #2e7d32; font-weight: bold; }
+#message.bad { color: #c33d17; font-weight: bold; }
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 48, 74, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#overlay.hidden { display: none; }
+
+#overlay-card {
+  background: #fffaf0;
+  border: 3px solid #22304a;
+  border-radius: 16px;
+  padding: 30px 40px;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+#overlay-card h2 { margin: 0 0 10px; font-size: 30px; }
+#overlay-card p { font-size: 17px; line-height: 1.45; margin: 0 0 18px; }
+#overlay-button { font-size: 18px; padding: 10px 26px; }

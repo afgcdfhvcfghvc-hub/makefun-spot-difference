@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twins of Mosslight — a spot-the-difference game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hud">
+  <div id="brand">
+    <h1>Twins of Mosslight</h1>
+    <p id="scene-name">Scene 1 · Mosslight Harbour</p>
+  </div>
+  <div id="stats">
+    <div class="stat" id="stat-find">
+      <span class="stat-label">To find</span>
+      <span class="stat-value" id="remaining-count">7</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Found</span>
+      <span class="stat-value" id="found-count">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Mistakes</span>
+      <span class="stat-value" id="mistake-count">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Score</span>
+      <span class="stat-value" id="score-count">0</span>
+    </div>
+  </div>
+  <div id="clock">
+    <div id="time-bar-track"><div id="time-bar"></div></div>
+    <span id="time-left">2:00</span>
+  </div>
+  <nav id="controls">
+    <button id="hint-button" type="button">Hint (<span id="hints-left">3</span>)</button>
+    <button id="pause-button" type="button">Pause</button>
+    <button id="restart-button" type="button">Restart</button>
+  </nav>
+</header>
+
+<main id="stage">
+  <figure class="panel-wrap">
+    <canvas id="panel-left" width="560" height="560"></canvas>
+    <figcaption>Original</figcaption>
+  </figure>
+  <figure class="panel-wrap">
+    <canvas id="panel-right" width="560" height="560"></canvas>
+    <figcaption>Spot the changes</figcaption>
+  </figure>
+</main>
+
+<p id="message" role="status">Find every difference between the two pictures. Click a difference on either picture.</p>
+
+<div id="overlay" class="hidden">
+  <div id="overlay-card">
+    <h2 id="overlay-title">Twins of Mosslight</h2>
+    <p id="overlay-text"></p>
+    <button id="overlay-button" type="button">Start</button>
+  </div>
+</div>
+
+<script src="js/artkit.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/scene-harbour.js"></script>
+<script src="js/scene-garden.js"></script>
+<script src="js/scene-market.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
